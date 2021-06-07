@@ -1,0 +1,42 @@
+ //  NÃO NECESSARIO ==================
+ @import "../sass/utilities/reset"; //  NÃO NECESSARIO
+ @import "bootstrap__imports"; //  NÃO NECESSARIO
+
+ body {
+     font-family:"Open sans"; //  NÃO NECESSARIO
+     height: 10000px; //  NÃO NECESSARIO
+ }
+
+ //diminuição em rem
+ html {
+     --font-base: 100%;
+     font-size: var(--font-base);
+     line-height: 145%;
+ }
+
+
+ @media (max-width:1440px) {
+
+     html {
+         font-size: calc(var(--font-base) - 9.25%);
+     }
+
+ }
+
+ @media (max-width:992px) {
+
+     html {
+         font-size: calc(var(--font-base) - 12.5%);
+     }
+
+ }
+
+ // ======================================
+
+
+ //NECESSARIOS  
+ @import "../sass/mixins";
+ @import "../sass/utilities/utilitarios";
+ @import "../sass/utilities/responsivo";
+ //page 
+ @import "../sass/page--institucional";
