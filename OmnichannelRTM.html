@@ -151,34 +151,6 @@
         </div>
     </section>
 
-    <section class="analises">
-
-        <div class="analises__wrapper">
-            <div class="parte1">
-
-                <div class="container analises__texto" data-aos="fade-right">
-                    <div>
-                        <h2>
-                            Disruptors had successfully broken the link in choosing, purchasing, or consuming a product
-                            or service. They do not attempt to compete with or overtake a reigning incumbent company
-                            entirely. Instead, they work to
-                            peel away a portion of the consumer decision-making process
-                        </h2>
-                        <p>
-                        </p>
-                        <p>TEIXEIRA, Thales. Unlocking the Customer Value Chain
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="parte2">
-                <img src="assets/img/office.png" alt="analises">
-            </div>
-        </div>
-
-    </section>
 
 
 
@@ -366,14 +338,152 @@
 
     </section>
 
+    <section class="numbers">
+
+        <div class="container">
+            <div class="numbers__text">
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, debitis </h1>
+            </div>
+            <div class="numbers__wrapper">
+
+                <div class="col-lg-4 item">
+                    <img src="assets/img/avatar-1.png" alt="numbers">
+                    <h5>
+                        +<span class="numbers_1" data-value="100000"></span>
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
+                </div>
+                <div class="col-lg-4 item">
+                    <img src="assets/img/avatar-1.png" alt="numbers">
+                    <h5>
+                        +<span class="numbers_2" data-value="100000"></span>
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
+                </div>
+                <div class="col-lg-4 item">
+                    <img src="assets/img/avatar-1.png" alt="numbers">
+                    <h5>
+                        +<span class="numbers_3" data-value="40000"></span>
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+
 
     <!-- atribuição -->
     <section class="atribuicao" style="display:none;">
         <div>Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">Pixel
                 perfect</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
     </section>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript" src="assets/js/animateNumber.js"></script>
+
+    <script>
+        function formatarValor(valor) {
+            return valor.toLocaleString('en-US', {
+                minimumFractionDigits: 2
+            });
+        }
+
+        $('.numbers_1').animateNumber({
+            number: 100000,
+            numberStep: function (now, tween) {
+                var floored_number = Math.floor(now),
+                    target = $(tween.elem);
+
+                var limpo = formatarValor(floored_number)
+                target.text(limpo);
+            }
+        }, {
+            easing: 'swing',
+            duration: 1800
+        });
+        $('.numbers_2').animateNumber({
+            number: 20000,
+            numberStep: function (now, tween) {
+                var floored_number = Math.floor(now),
+                    target = $(tween.elem);
+
+                var limpo = formatarValor(floored_number)
+                target.text(limpo);
+            }
+        }, {
+            easing: 'swing',
+            duration: 1800
+        });
+
+        $('.numbers_3').animateNumber({
+            number: 40000,
+            numberStep: function (now, tween) {
+                var floored_number = Math.floor(now),
+                    target = $(tween.elem);
+
+                var limpo = formatarValor(floored_number)
+                target.text(limpo);
+            }
+        }, {
+            easing: 'swing',
+            duration: 1800
+        });
+    </script>
+    <!--  <script>
+        const sectionNumber = document.querySelector(".numbers");
+
+
+
+        function numeroCresce() {
+            if (sectionNumber.classList.contains("passou") && !sectionNumber.classList.contains("terminou")) {
+
+                let numeros = document.querySelectorAll(".numbers_")
+
+                numeros.forEach((i) => {
+
+                    var min = 0;
+                    var max = i.dataset.value;
+                    var duracao = 100000; // 5 segundos
+
+                    for (var n = min; n <= max; n++) {
+
+                        setTimeout(function (nr) {
+                            i.innerHTML = nr;
+                        }, n);
+                    }
+
+                })
+                sectionNumber.classList.add("terminou")
+
+                /*  function formatarValor(valor) {
+                     return valor.toLocaleString('en-US', {
+                         minimumFractionDigits: 2
+                     });
+                 } */
+            }
+
+        }
+
+        function chegouNaSecao() {
+            const sectionTop = sectionNumber.getBoundingClientRect().top;
+            if (sectionTop < 500) {
+                sectionNumber.classList.add("passou")
+                numeroCresce()
+
+            }
+
+        }
+
+
+        window.addEventListener("scroll", chegouNaSecao)
+    </script> -->
     <script>
         AOS.init({
             duration: 400, // values from 0 to 3000, with step 50ms
@@ -421,6 +531,9 @@
         }
 
         new Swiper(".swiper-container", props)
+    </script>
+    <script>
+
     </script>
 
 </body>
