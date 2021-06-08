@@ -259,42 +259,7 @@
     </section>
 
 
-    <section class="numbers">
 
-        <div class="container">
-            <div class="numbers__text">
-                <h1 data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, debitis </h1>
-            </div>
-            <div class="numbers__wrapper">
-
-                <div class="col-lg-4 item" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/img/avatar-1.png" alt="numbers">
-                    <h5>
-                        +<span class="numbers_1" data-value="100000"></span>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
-                </div>
-                <div class="col-lg-4 item" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/avatar-1.png" alt="numbers">
-                    <h5>
-                        +<span class="numbers_2" data-value="100000"></span>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
-                </div>
-                <div class="col-lg-4 item" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/img/avatar-1.png" alt="numbers">
-                    <h5>
-                        +<span class="numbers_3" data-value="40000"></span>
-                    </h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
-                </div>
-
-
-
-            </div>
-
-        </div>
-    </section>
 
 
     <section class="quebrared">
@@ -377,6 +342,43 @@
 
     </section>
 
+    <section class="numbers">
+
+        <div class="container">
+            <div class="numbers__text">
+                <h1 data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, debitis </h1>
+            </div>
+            <div class="numbers__wrapper">
+
+                <div class="col-lg-4 item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/img/avatar-1.png" alt="numbers">
+                    <h5>
+                        +<span class="numbers_1" data-value="100000"></span>
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
+                </div>
+                <div class="col-lg-4 item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/img/avatar-1.png" alt="numbers">
+                    <h5>
+                        +<span class="numbers_2" data-value="100000"></span>
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
+                </div>
+                <div class="col-lg-4 item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/img/avatar-1.png" alt="numbers">
+                    <h5>
+                        +<span class="numbers_3" data-value="40000"></span>
+                    </h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque ea, debitis deserunt</p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </section>
+
 
 
     <!-- atribuição -->
@@ -392,87 +394,7 @@
     <script type="text/javascript" src="assets/js/animateNumber.js"></script>
 
     <script>
-        function formatarValor(valor) {
-            return valor.toLocaleString('en-US', {
-                minimumFractionDigits: 2
-            });
-        }
-
-        $('.numbers_1').animateNumber({
-            number: 100000,
-            numberStep: function (now, tween) {
-                var floored_number = Math.floor(now),
-                    target = $(tween.elem);
-
-                var limpo = formatarValor(floored_number)
-                target.text(limpo);
-            }
-        }, {
-            easing: 'swing',
-            duration: 1800
-        });
-        $('.numbers_2').animateNumber({
-            number: 20000,
-            numberStep: function (now, tween) {
-                var floored_number = Math.floor(now),
-                    target = $(tween.elem);
-
-                var limpo = formatarValor(floored_number)
-                target.text(limpo);
-            }
-        }, {
-            easing: 'swing',
-            duration: 1800
-        });
-
-        $('.numbers_3').animateNumber({
-            number: 40000,
-            numberStep: function (now, tween) {
-                var floored_number = Math.floor(now),
-                    target = $(tween.elem);
-
-                var limpo = formatarValor(floored_number)
-                target.text(limpo);
-            }
-        }, {
-            easing: 'swing',
-            duration: 1800
-        });
-    </script>
-    <!--  <script>
-        const sectionNumber = document.querySelector(".numbers");
-
-
-
-        function numeroCresce() {
-            if (sectionNumber.classList.contains("passou") && !sectionNumber.classList.contains("terminou")) {
-
-                let numeros = document.querySelectorAll(".numbers_")
-
-                numeros.forEach((i) => {
-
-                    var min = 0;
-                    var max = i.dataset.value;
-                    var duracao = 100000; // 5 segundos
-
-                    for (var n = min; n <= max; n++) {
-
-                        setTimeout(function (nr) {
-                            i.innerHTML = nr;
-                        }, n);
-                    }
-
-                })
-                sectionNumber.classList.add("terminou")
-
-                /*  function formatarValor(valor) {
-                     return valor.toLocaleString('en-US', {
-                         minimumFractionDigits: 2
-                     });
-                 } */
-            }
-
-        }
+        const sectionNumber = document.querySelector(".numbers")
 
         function chegouNaSecao() {
             const sectionTop = sectionNumber.getBoundingClientRect().top;
@@ -486,7 +408,64 @@
 
 
         window.addEventListener("scroll", chegouNaSecao)
-    </script> -->
+        window.addEventListener("scroll", verifica)
+
+
+        function formatarValor(valor) {
+            return valor.toLocaleString('en-US', {
+                minimumFractionDigits: 2
+            });
+        }
+
+        function verifica() {
+            if (sectionNumber.classList.contains("passou") && !sectionNumber.classList.contains("animou")) {
+                sectionNumber.classList.add("animou")
+
+                $('.numbers_1').animateNumber({
+                    number: 100000,
+                    numberStep: function (now, tween) {
+                        var floored_number = Math.floor(now),
+                            target = $(tween.elem);
+
+                        var limpo = formatarValor(floored_number)
+                        target.text(limpo);
+                    }
+                }, {
+                    easing: 'swing',
+                    duration: 1800
+                });
+                $('.numbers_2').animateNumber({
+                    number: 20000,
+                    numberStep: function (now, tween) {
+                        var floored_number = Math.floor(now),
+                            target = $(tween.elem);
+
+                        var limpo = formatarValor(floored_number)
+                        target.text(limpo);
+                    }
+                }, {
+                    easing: 'swing',
+                    duration: 1800
+                });
+                $('.numbers_3').animateNumber({
+
+                    number: 40000,
+                    numberStep: function (now, tween) {
+                        var floored_number = Math.floor(now),
+                            target = $(tween.elem);
+
+                        var limpo = formatarValor(floored_number)
+                        target.text(limpo);
+                    }
+                }, {
+                    easing: 'swing',
+                    duration: 1800
+                });
+
+            }
+        }
+    </script>
+
     <script>
         AOS.init({
             duration: 400, // values from 0 to 3000, with step 50ms
