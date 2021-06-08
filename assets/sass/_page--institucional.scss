@@ -6,7 +6,8 @@ $preto-base: rgba(0, 0, 0, 0.87);
 
 .intro__ {
     padding: 40px 0;
-    background-image: url("../img/background-white.jpg");
+    // background-image: url("../img/background-white.jpg");
+    background-image: img("background-white.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: left;
@@ -399,5 +400,187 @@ $preto-base: rgba(0, 0, 0, 0.87);
             margin: 0 auto;
             max-width: 220px;
         }
+    }
+}
+
+section {
+    overflow: hidden;
+}
+
+.future {
+    padding: 60px 0;
+    padding-bottom: 100px;
+
+    &__text {
+        font-family: 'Poppins';
+        max-width: 900px;
+        @include center;
+
+
+        h1 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 30px;
+            display: inline-block;
+            @include center;
+            width: 100%;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-top: 40px;
+
+        @include d(m) {
+            flex-direction: column;
+            max-width: 450px;
+            @include center;
+        }
+    }
+
+    .circle {
+        flex: 1;
+
+        img {
+            @include center;
+            object-fit: contain;
+
+            @include d(m) {
+                max-width: 210px;
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+
+    &__item {
+        flex: 1;
+
+        ul {
+            li {
+                list-style: disc;
+                margin-bottom: 1.875rem;
+                // font-family: "Poppins";
+                color: $preto-base;
+
+                p {
+                    margin-left: 10%;
+                    display: list-item;
+                    margin-bottom: 15px;
+                    font-size: .875rem;
+                    list-style: disc;
+                    color: $preto-base;
+
+                    &:first-child {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.quebrablack,
+.quebrared {
+    h1 {
+        max-width: 950px;
+        @include center;
+        font-family: 'Poppins';
+
+        @include d(s) {
+            font-size: 20px;
+        }
+    }
+}
+
+
+.colabor {
+    margin-bottom: 120px;
+
+    &__wrapper {
+        display: flex;
+        padding: 40px;
+
+        @include d(m) {
+            padding: 40px 0;
+        }
+    }
+
+    &__container {
+        max-width: 1050px;
+        margin: 0 auto;
+    }
+
+
+    &__text {
+        font-family: 'Poppins';
+        max-width: 900px;
+        @include center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+
+        h1 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 30px;
+            display: inline-block;
+            @include center;
+        }
+    }
+
+    &__item {
+        width: 320px;
+        padding: 15px 1.5625rem;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.09);
+
+        h2 {
+            text-align: center;
+            color: $preto-base;
+            margin-bottom: 5px;
+            font-family: "Poppins";
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        >span {
+            color: rgb(51, 51, 51);
+            text-align: center;
+            font-weight: 400;
+            display: inline-block;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: inline-block;
+
+            strong {
+                font-weight: 600;
+                display: inline-block;
+                width: 100%;
+            }
+        }
+    }
+
+    .img__container {
+        border-radius: 50%;
+        position: relative;
+        @include size(5.625rem);
+        overflow: hidden;
+        @include center;
+        margin-bottom: 15px;
+
+        img {
+            position: absolute;
+            @include size(100%);
+            object-fit: cover;
+            @include inset;
+        }
+
     }
 }
