@@ -150,6 +150,12 @@ $preto-base: rgba(0, 0, 0, 0.87);
             padding: 20px 0;
             max-width: 600px;
 
+            h2 {
+                font-size: 1.125rem;
+                font-weight: 600;
+                color: $preto-base;
+                margin-top: 15px;
+            }
 
             @include d(m) {
                 flex-direction: column;
@@ -160,9 +166,10 @@ $preto-base: rgba(0, 0, 0, 0.87);
             }
 
             p {
-                font-weight: 500;
+                font-weight: 400;
                 font-family: 'Poppins', sans-serif;
                 line-height: 145%;
+                color: $preto-base;
 
                 @include d(m) {
                     margin-top: 20px;
@@ -172,7 +179,7 @@ $preto-base: rgba(0, 0, 0, 0.87);
 
             span {
                 @include size(90px);
-                flex: 1 0 auto;
+                flex: 0 0 auto;
                 background: white;
                 box-shadow: 0px 2px 4px rgba(8, 35, 48, 0.24);
                 border-radius: 50%;
@@ -180,6 +187,10 @@ $preto-base: rgba(0, 0, 0, 0.87);
                 display: block;
                 margin-right: 20px;
                 position: relative;
+
+                @include d(m) {
+                    @include center;
+                }
 
                 img {
                     position: absolute;
@@ -195,15 +206,23 @@ $preto-base: rgba(0, 0, 0, 0.87);
 
     .strategic__item-2 {
 
-        display: block;
+        display: flex;
+        justify-content: center;
         @include size(100%);
 
         h2 {
             font-size: 2.5rem;
-            max-width: 250px;
+            // max-width: 250px;
+            @include center;
             color: $preto-base;
             text-transform: uppercase;
             font-family: 'Poppins', sans-serif;
+            max-width: 300px;
+            text-align: center;
+
+            @include d(m) {
+                margin-bottom: 20px !important;
+            }
 
             @include d(m) {
                 text-align: center;
@@ -591,6 +610,9 @@ section {
             display: inline-block;
             margin: auto;
             margin-bottom: 15px;
+            margin-top: 40px;
+            font-size: 18px;
+            font-weight: 500;
         }
 
         p {
@@ -631,7 +653,6 @@ section {
 .numbers {
     padding: 60px 0;
     padding-bottom: 120px;
-    padding-top: 0;
 
     &__text {
         display: flex;
